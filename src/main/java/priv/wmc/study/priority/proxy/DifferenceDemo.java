@@ -2,15 +2,14 @@ package priv.wmc.study.priority.proxy;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
-
-import priv.wmc.study.priority.proxy.cglib.CglibTargetProxy;
-import priv.wmc.study.priority.proxy.jdk.JdkTargetProxy;
+import priv.wmc.study.priority.proxy.cglib.CustomCglibTargetProxy;
+import priv.wmc.study.priority.proxy.javassist.CustomJavassistTargetProxy;
+import priv.wmc.study.priority.proxy.jdk.CustomJdkTargetProxy;
 
 /**
- * 核心类型设置
- * jdk - 接口
- * cglib - 具体类（原理是通过产生目标类的继承类实现的）
- * javassist - 具体类
+ * <p>jdk - 接口
+ * <p>cglib - 具体类（原理是通过产生目标类的继承类实现的）
+ * <p>javassist - 具体类（原理是通过产生目标类的继承类实现的）
  *
  * @author 王敏聪
  * @date 2020-02-04 20:41
@@ -20,13 +19,37 @@ public class DifferenceDemo {
 
     @Test
     public void test() {
+        test1();
+//        test2();
+    }
+
+    public void test1() {
         EatInterface target = new EatInterfaceImpl();
 
-        Object proxy = JdkTargetProxy.getProxyInstance(target);
-        log.info("jdk: " + (proxy instanceof EatInterfaceImpl));
+        Object proxyByJdk = CustomJdkTargetProxy.newProxyInstance(target);
+        Object proxyByCglib = CustomCglibTargetProxy.newProxyInstance(target);
+        Object proxyByJavassist = CustomJavassistTargetProxy.newProxyInstance();
 
-        proxy = CglibTargetProxy.getProxyInstance(target);
-        log.info("cglib: " + (proxy instanceof EatInterfaceImpl));
+        log.info("jdk       proxy is aim interface type: " + (proxyByJdk instanceof EatInterface));
+        log.info("cglib     proxy is aim interface type: " + (proxyByJdk instanceof EatInterface));
+        log.info("javassist proxy is aim interface type: " + (proxyByJavassist instanceof EatInterface));
+
+        log.info("jdk       proxy is target's super class: " + (proxyByJdk instanceof EatInterfaceImpl));
+        log.info("cglib     proxy is target's super class: " + (proxyByCglib instanceof EatInterfaceImpl));
+        log.info("javassist proxy is target's super class: " + (proxyByJavassist instanceof EatInterfaceImpl));
+    }
+
+    public void test2() {
+        EatAndDrinkInterfaceImpl target = new EatAndDrinkInterfaceImpl();
+
+        Object proxyByJdk = CustomJdkTargetProxy.newProxyInstances(target);
+        Object proxyByCglib = CustomCglibTargetProxy.newProxyInstances(target);
+
+        log.info("jdk   proxy is aim interface type: " + (proxyByJdk instanceof EatInterface && proxyByJdk instanceof DrinkInterface));
+        log.info("cglib proxy is aim interface type: " + (proxyByJdk instanceof EatInterface && proxyByJdk instanceof DrinkInterface));
+
+        log.info("jdk   proxy is target's super class: " + (proxyByJdk instanceof EatAndDrinkInterfaceImpl));
+        log.info("cglib proxy is target's super class: " + (proxyByCglib instanceof EatAndDrinkInterfaceImpl));
     }
 
 }

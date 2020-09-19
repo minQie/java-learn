@@ -15,14 +15,17 @@ public class Demo {
 
     @Test
     public void test() {
-//        log.info(System.getProperty("file.separator"));
-//        log.info(System.getProperty("path.separator"));
+        if (null instanceof Object) {
 
+        }
+    }
+
+    public void uuidTest() {
         String uuid = UUID.randomUUID().toString();
         // 36
         log.info(String.valueOf(uuid.length()));
         // 32
-        log.info(String.valueOf(uuid.replaceAll("-", "").length()));
+        log.info(String.valueOf(uuid.replace("-", "").length()));
     }
 
     public void basicOperate() {

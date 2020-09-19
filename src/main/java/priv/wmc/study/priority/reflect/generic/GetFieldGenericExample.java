@@ -4,15 +4,14 @@ import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.List;
-import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
 /**
- * 先科普一下 ParameterizedType：
- * 1、这个是 Field 类的方法
- * 2、类中的成员变量使用了泛型（成员变量的类型定义有尖括号），那么这个成员变量通过反射获取的 Field 就是 ParameterizedType 的子类
- * （这就是判断某个类中的成员变量是否使用了泛型的一种判断条件）
+ * <p>先科普一下 ParameterizedType：
+ * <p>1、这个是 Field 类的方法
+ * <p>2、类中的成员变量使用了泛型（成员变量的类型定义有尖括号），那么这个成员变量通过反射获取的 Field 就是 ParameterizedType 的子类
+ * <p>（这就是判断某个类中的成员变量是否使用了泛型的一种判断条件）
  * 
  * @author 王敏聪
  * @date 2020-04-19 16:26
@@ -23,6 +22,7 @@ public class GetFieldGenericExample<T> {
     public T t;
     public List list;
     public List<?> wildList;
+    public List<T> tList;
     public List<String> stringList;
 
     @Test
@@ -41,7 +41,7 @@ public class GetFieldGenericExample<T> {
         Type fieldGenericType = field.getGenericType();
 
         /* 下面两种方式都可以校验，字段是否有使用泛型，但是要注意
-
+         *
          * 不要使用  sun.reflect.generics.reflectiveObjects.ParameterizedTypeImpl（原因见下边）
          * 而应该使用 java.lang.reflect.ParameterizedType
          *

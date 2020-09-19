@@ -2,7 +2,8 @@ package priv.wmc.study.priority.proxy.cglib;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
-
+import priv.wmc.study.priority.proxy.DrinkInterface;
+import priv.wmc.study.priority.proxy.EatAndDrinkInterfaceImpl;
 import priv.wmc.study.priority.proxy.EatInterface;
 import priv.wmc.study.priority.proxy.EatInterfaceImpl;
 
@@ -11,22 +12,43 @@ import priv.wmc.study.priority.proxy.EatInterfaceImpl;
  * @date 2020-07-21 20:46:09
  */
 @Slf4j
-public class Demo {
+public class Demo<T extends EatInterface & DrinkInterface> {
+
+    private static final String LOG_LINE_SEPARATOR = "==== 分割线 ====";
 
     @Test
     public void test() {
-        basicDemo();
+//        basicDemo();
+        test1();
     }
 
     public void basicDemo() {
         EatInterface target = new EatInterfaceImpl();
-        Object proxy = CglibTargetProxy.getProxyInstance(target);
+        EatInterface proxy = CustomCglibTargetProxy.newProxyInstance(target);
 
-        EatInterface eatInterface = (EatInterface) proxy;
-        log.info("==== 分割线 ====");
-        eatInterface.eatRice();
-        log.info("==== 分割线 ====");
-        eatInterface.eatNoodles();
+        log.info(LOG_LINE_SEPARATOR);
+        proxy.eatRice();
+        log.info(LOG_LINE_SEPARATOR);
+        proxy.eatNoodles();
+    }
+
+    public void test1() {
+        EatAndDrinkInterfaceImpl target = new EatAndDrinkInterfaceImpl();
+
+        @SuppressWarnings("unchecked")
+        T proxy = (T) CustomCglibTargetProxy.newProxyInstances(target);
+
+        // 拿碗筷 吃 洗碗筷
+        log.info(LOG_LINE_SEPARATOR);
+        proxy.eatRice();
+        log.info(LOG_LINE_SEPARATOR);
+        proxy.eatNoodles();
+
+        // 拿碗筷 喝 洗碗筷
+        log.info(LOG_LINE_SEPARATOR);
+        proxy.drinkTea();
+        log.info(LOG_LINE_SEPARATOR);
+        proxy.drinkJuice();
     }
 
 }

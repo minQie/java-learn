@@ -11,7 +11,7 @@ import lombok.extern.slf4j.Slf4j;
  * @date 2020-07-21 20:58:43
  */
 @Slf4j
-public class DateTrans {
+public class DateTransTest {
 
     public static void main(String[] args) throws ParseException {
 

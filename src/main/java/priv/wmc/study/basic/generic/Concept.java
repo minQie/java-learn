@@ -10,7 +10,7 @@ package priv.wmc.study.basic.generic;
  *
  * List<*>                  满足     List<Object>、List<?>、List<? extends Object>
  *
- * 泛型没有多态：List<People> = new ArrayList<User>()（×）
+ * 泛型没有多态（这也就是修饰符 extends super 的作用）：List<People> = new ArrayList<User>()（×）
  * 泛型不能使用基本类型：List<int>（×）
  * 类上定义的泛型，静态不能使用：
  *     class User<T> { static T method(T t) }（×）

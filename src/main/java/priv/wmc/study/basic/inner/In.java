@@ -8,7 +8,7 @@ public class In {
 
     public static void test(){
         int x = 1;
-        // 内部类访问的外部局部变量或者成员必须是静态的
+        // 内部类访问的外部局部变量或者成员必须是常量（下面放开=编译时异常）
 //        x = 2;
         new Out() {
             public int method() {
@@ -22,4 +22,4 @@ public class In {
  * @author Wang Mincong
  * @date 2020-07-19 10:05:51
  */
-class Out {}
+interface Out {}

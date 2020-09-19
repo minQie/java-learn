@@ -3,12 +3,11 @@ package priv.wmc.study.jdk8.stream;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+import priv.wmc.study.jdk8.stream.pojo.Person;
 
 /**
  * 将集合转成Map
@@ -32,17 +31,13 @@ public class CollectionToMapTest {
     }
 
     public Map<String, Person> toMap(List<Person> personList) {
+        Function<Person, Person> valueProvider = person -> person;
+//        Function<Person, Person> valueProvider = Function.identity();
+
         return personList.stream()
             // Map的键、Map的值、当键重复时的保留策略
-            .collect(Collectors.toMap(Person::getName, person -> person, (person1, person2) -> person1));
+            .collect(Collectors.toMap(Person::getName, valueProvider, (person1, person2) -> person1));
     }
 
 }
 
-@Getter
-@Setter
-@AllArgsConstructor
-class Person {
-    private Integer age;
-    private String name;
-}

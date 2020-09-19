@@ -2,13 +2,13 @@ package priv.wmc.study.basic.number;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
-/** 
+/**
  * @author 王敏聪
  * @date 2020-01-04 14:14
  */
 @Slf4j
-public class IntegerCacheDemo {
-    
+public class IntegerCacheTest {
+
     @Test
     public void demo() {
         // 缓存范围 -128 ~ 127
@@ -16,18 +16,18 @@ public class IntegerCacheDemo {
         Integer a = 1;
         Integer b = 1;
         log.info(String.valueOf(a == b));
-        
+
         a = 127;
         b = 127;
-    	log.info(String.valueOf(a == b));
-		
-		a = new Integer(1);
-		b = new Integer(1);
-		log.info(String.valueOf(a == b));
-		
-		a = 128;
-		b = 128;
-		log.info(String.valueOf(a == b));
-	}
-	
+        log.info(String.valueOf(a == b));
+
+        a = new Integer(1);
+        b = new Integer(1);
+        log.info(String.valueOf(a == b));
+
+        a = 128;
+        b = 128;
+        log.info(String.valueOf(a == b));
+    }
+
 }

@@ -1,5 +1,7 @@
 package priv.wmc.study.basic.generic;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -9,7 +11,7 @@ import org.junit.Test;
  * @date 2020-08-31 18:51:20
  */
 @Slf4j
-public class BasicExample {
+public class BasicExample<T> {
 
     @Test
     public void test() {
@@ -30,6 +32,7 @@ public class BasicExample {
 //        objList.add("123");
     }
 
+    // 四、
     public void test1(Object obj) {
         if (obj instanceof Set) {
             // 进入到if中说明，obj是Set类型，必须将其转成通配符类型
@@ -40,4 +43,24 @@ public class BasicExample {
         }
     }
 
+    // 五、super 不能用于泛型声明
+    // public class Xxx<T super String>
+    // public static <T super Xxx> void func(T t)
+
+    // super的应用场景？
+    //
+    public static <T> void a(List<? super String> list) {
+        List<? super T> a = new ArrayList<>();
+    }
+
+    // 六、
+    public static <T> T fun(T t1, T t2) {
+        return t1;
+    }
+    public static void funTest() {
+        // 判定 T 为 Serializable & Comparable<? extends Serializable & Comparable<?>>
+        fun("123", 1);
+        // 莫得办法，判定 T 为 Object
+        fun("123", new BasicExample());
+    }
 }

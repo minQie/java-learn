@@ -2,7 +2,6 @@ package priv.wmc.study.priority.proxy.javassist;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
-
 import priv.wmc.study.priority.proxy.EatInterface;
 
 /**
@@ -18,13 +17,13 @@ public class Demo {
     }
     
     public void basicDemo() {
-        Object proxy = JavassistTargetProxy.newProxyInstance();
+        // EatInterfaceImpl 的 proxy
+        EatInterface proxy = CustomJavassistTargetProxy.newProxyInstance();
         
-        EatInterface eatInterface = (EatInterface) proxy;
         log.info("==== 分割线 ====");
-        eatInterface.eatRice();
+        proxy.eatRice();
         log.info("==== 分割线 ====");
-        eatInterface.eatNoodles();
+        proxy.eatNoodles();
     }
     
 }

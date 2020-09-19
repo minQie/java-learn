@@ -1,6 +1,7 @@
 package priv.wmc.study.basic.generic.enum_test;
 
 import lombok.extern.slf4j.Slf4j;
+import priv.wmc.study.priority.proxy.jdk.CustomJdkTargetProxy;
 
 /**
  * 如何表达一种泛型：实现了特定的接口的枚举类型
@@ -46,7 +47,10 @@ public class EnumGenericConcept {
     /** 不声明额外的泛型类型，只要编译时期要求的类型符合就行（最简单的做法） */
     public static void extraDemo3(Enum<? extends EnumDefine> t) {((EnumDefine)t).getValue();}
 
-    /** 顺序不能反：语法规定 & 符号后边只能跟接口类型，因为java是单继承的，你会说不对啊，不是能够集成普通的类类型么，语法规定类你得写在extends后边 */
+    /* 顺序不能反：语法规定 & 符号后边只能跟接口类型，因为java是单继承的，你会说不对啊，不是能够集成普通的类类型么，语法规定类你得写在extends后边
+     *
+     * 还可以参见{@link CustomJdkTargetProxy#newProxyInstances}
+     */
 //    public static <T extends EnumDefine & Enum<T>> void demo4() {}
 
 }

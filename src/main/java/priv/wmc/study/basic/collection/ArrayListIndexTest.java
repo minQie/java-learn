@@ -3,7 +3,11 @@ package priv.wmc.study.basic.collection;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
@@ -35,4 +39,39 @@ public class ArrayListIndexTest {
         System.out.println(list);
     }
 
+    @Test
+    public void normalForAddTest() {
+        List<String> list = new ArrayList<>(Arrays.asList("1", "2", "3"));
+
+        int size = list.size();
+        for (int i = 0; i < size; i++) {
+            list.add("4");
+            System.out.println(list.size());
+        }
+
+        System.out.println(list);
+    }
+
+    @Test
+    public void demo() {
+        Map<String, String> map = new HashMap<>(5);
+        map.put("Abc", "1");
+        map.put("aBc", "2");
+        map.put("abC", "3");
+
+        // 拿不到 map 中存储节点的数组
+
+        Set<Entry<String, String>> entries = map.entrySet();
+        for (Entry<String, String> entry : entries) {
+            // 没有方法
+//            entry.setKey
+        }
+    }
+
+    @Test
+    public void tt() {
+        for (int i = 0;; i++) {
+            System.out.println(i);
+        }
+    }
 }

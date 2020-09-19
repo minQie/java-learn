@@ -8,10 +8,10 @@ import org.junit.Test;
  * @date 2019-09-06 23:30
  */
 @Slf4j
-public class Basic {
+public class AccuracyTest {
     
     @Test
-    public void accuracyDemo() {
+    public void test() {
         // 别指望能有什么办法做到：0.1 + 0.2 = 0.3这种
         // 1、凡是在代码中显示声明的小数值都是double的高精度值
         // 2、高精度值相加好比：0.10000001 + 0.2000001 != 0.30000003（举个例子，实际有很多0了）
@@ -27,33 +27,4 @@ public class Basic {
         log.info(String.valueOf(0.1 + 0.2 > 0.3));// true
     }
 
-
-    /**
-     * int不赋值，默认为0
-     */
-    @Test
-    public void intDefaultdemo() {
-        System.out.println(new Object() {
-            int sum;
-        }.sum);
-
-        System.out.println(new Object() {
-            Integer sum;
-		}.sum);
-	}
-	
-	/**
-	 * -128 ~ 127
-	 */
-	@Test
-	public void staticValueDemo() {
-		Integer i1 = 127;
-		Integer i2 = 127;
-		
-		Integer i3 = 128;
-		Integer i4 = 128;
-		log.info(String.valueOf(i1 == i2));
-		log.info(String.valueOf(i3 == i4));
-	}
-	
 }
