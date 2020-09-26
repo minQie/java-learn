@@ -25,7 +25,7 @@ import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
  * 生成指定信息或Url的二维码图片（可以添加中心图片、下方的文字）
  * ps：java画图的坐标可以理解为从一个点出发，从左至右为X轴，由上至下为Y轴
  * 
- * @author 王敏聪
+ * @author Wang Mincong
  * @date 2019-06-21 14:36
  */
 public class GenerateQrCodePic {

@@ -5,7 +5,7 @@ import org.junit.Test;
 /** 
  * 测试泛型在继承关系下的表现
  * 
- * @author 王敏聪
+ * @author Wang Mincong
  * @date 2020-04-27 15:31
  */
 public class WiredExampleWhy {

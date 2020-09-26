@@ -24,7 +24,7 @@ import priv.wmc.study.thrid.http.StaticConstant;
 /**
  * 使用HttpClient发送post和get请求的工具类（需要引入httpclient、httpcore、commons-logging）
  *
- * @author 王敏聪
+ * @author Wang Mincong
  * @date 2019-06-25 14:49
  */
 @Slf4j

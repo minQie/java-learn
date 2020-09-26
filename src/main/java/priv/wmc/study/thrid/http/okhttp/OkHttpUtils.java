@@ -16,7 +16,7 @@ import okhttp3.Response;
  * 要基于连接池
  * 从postman了解到，OkHttp，一款流行的http工具（需要引入okhttp）
  * 
- * @author 王敏聪
+ * @author Wang Mincong
  * @date 2019-06-25 14:49
  */
 @Slf4j

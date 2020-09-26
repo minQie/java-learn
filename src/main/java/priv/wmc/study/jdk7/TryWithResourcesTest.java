@@ -16,7 +16,7 @@ import org.junit.Test;
  * 
  * 注意：是帮你自动在try之后关闭资源，不是自动帮你处理异常（错误的启蒙认知 - 尴尬，怎么才能认知成这样）
  * 
- * @author 王敏聪
+ * @author Wang Mincong
  * @date 2020-05-02 17:47
  */
 public class TryWithResourcesTest {

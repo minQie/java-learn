@@ -3,7 +3,7 @@ package priv.wmc.study.basic.extend;
 import lombok.Getter;
 
 /**
- * @author 王敏聪
+ * @author Wang Mincong
  * @date 2019-08-27 12:39
  */
 @Getter

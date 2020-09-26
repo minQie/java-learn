@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * 子类
  *
- * @author 王敏聪
+ * @author Wang Mincong
  * @date 2020-03-14 14:50
  */
 @Slf4j

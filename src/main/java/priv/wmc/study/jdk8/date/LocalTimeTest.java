@@ -8,7 +8,7 @@ import org.junit.Test;
 /**
  * 时间，不存储日期
  *
- * @author 王敏聪
+ * @author Wang Mincong
  * @date 2020-03-03 16:50
  */
 @Slf4j

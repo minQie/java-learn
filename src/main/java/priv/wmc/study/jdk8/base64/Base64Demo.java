@@ -22,7 +22,7 @@ import lombok.extern.slf4j.Slf4j;
  * static Base64.Decoder getUrlDecoder() - 返回一个 Base64.Decoder ，解码使用 URL 和文件名安全型 base64 编码方案
  * static Base64.Encoder getUrlEncoder() - 返回一个 Base64.Encoder ，编码使用 URL 和文件名安全型 base64 编码方案
  *
- * @author 王敏聪
+ * @author Wang Mincong
  * @date 2019-08-24 17:09
  */
 @Slf4j

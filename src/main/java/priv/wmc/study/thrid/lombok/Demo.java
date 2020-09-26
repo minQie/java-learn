@@ -3,7 +3,7 @@ package priv.wmc.study.thrid.lombok;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * @author 王敏聪
+ * @author Wang Mincong
  * @date 2019-08-19 15:02
  */
 @Slf4j

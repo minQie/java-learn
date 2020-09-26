@@ -14,7 +14,7 @@ import lombok.extern.slf4j.Slf4j;
  * 它使用基于JSR 292的新语言特性，其中包含在JDK 7中引入的 invokedynamic，将JavaScript编译成Java字节码
  * 与先前的Rhino实现相比，这带来了2到10倍的性能提升
  *
- * @author 王敏聪
+ * @author Wang Mincong
  * @date 2019-08-24 17:05
  */
 @Slf4j

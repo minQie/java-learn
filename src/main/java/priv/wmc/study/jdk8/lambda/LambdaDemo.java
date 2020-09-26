@@ -6,7 +6,7 @@ import priv.wmc.study.jdk8.function_interface.MathOperationInteface;
 /** 
  * 测试JDK8的lambda表达式
  * 
- * @author 王敏聪
+ * @author Wang Mincong
  * @date 2019-08-09 14:10
  */
 @Slf4j

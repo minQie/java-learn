@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /** 
- * 测试@AllArgsConstructor
+ * 测试 @AllArgsConstructor
  * 
  * 1、生成的构造函数，参数包括所有“非静态、未被初始化的成员变量”
  * 
@@ -17,7 +17,7 @@ import lombok.Getter;
  * 
  * All、官网：显示声明和由这三种注解生成的构造方法同定义的构造方法，并不会停止这些注解生成构造方法，所以会报错
  * 
- * @author 王敏聪
+ * @author Wang Mincong
  * @date 2019-08-19 15:00
  */
 @Getter

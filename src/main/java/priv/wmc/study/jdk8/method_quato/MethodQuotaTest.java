@@ -13,7 +13,7 @@ import priv.wmc.study.basic.generic.pojo.Father;
 /**
  * 方法引用
  *
- * @author 王敏聪
+ * @author Wang Mincong
  * @date 2019-08-24 16:49
  */
 @Slf4j

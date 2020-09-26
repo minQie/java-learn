@@ -12,7 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * 采用java原生的http请求，主要介绍一下http协议的请求头等概念，不作为工具类使用
  * 
- * @author 王敏聪
+ * @author Wang Mincong
  * @date 2019-06-25 14:49
  */
 @Slf4j

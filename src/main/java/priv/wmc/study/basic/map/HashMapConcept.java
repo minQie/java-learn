@@ -13,7 +13,7 @@ import java.util.HashMap;
  *
  * HashMap并非线程安全，当存在多个线程同时写入HashMap时，可能会导致数据不一致
  *
- * @author 王敏聪
+ * @author Wang Mincong
  * @date 2020-05-06 21:01
  */
 public final class HashMapConcept {

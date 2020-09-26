@@ -16,7 +16,7 @@ package priv.wmc.study.basic.string;
  * --intern方法<br>
  * 强制返回常量池中存在的相同字符串内容的对象地址<br>
  * <br>
- * @author 王敏聪
+ * @author Wang Mincong
  * @date 2020-05-06 22:34
  */
 public class BasicConcept {

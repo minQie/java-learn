@@ -40,7 +40,7 @@ import org.junit.Test;
  *    不改变源数据
  *    不可重复使用
  *
- * @author 王敏聪
+ * @author Wang Mincong
  * @date 2019-08-24 16:27
  */
 public class StreamTest {

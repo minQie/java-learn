@@ -12,7 +12,7 @@ package priv.wmc.study.basic.execute.order;
  * 8、初始化子类的成员变量
  * 9、将堆内存中的地址赋值给引用变量 ---> 子类构造方法出栈
  * 
- * @author 王敏聪
+ * @author Wang Mincong
  * @date 2020-03-14 14:49
  */
 public class Demo {

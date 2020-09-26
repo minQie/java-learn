@@ -8,7 +8,7 @@ import org.junit.Test;
 /**
  * 父类和子类有同名属性，对象调用该属性，变量实际类型是什么就调谁的（和方法重载一样的意思）
  *
- * @author 王敏聪
+ * @author Wang Mincong
  * @date 2019-11-04 11:57
  */
 @Slf4j

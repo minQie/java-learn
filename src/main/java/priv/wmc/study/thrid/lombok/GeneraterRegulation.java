@@ -8,7 +8,7 @@ import lombok.Setter;
 /** 
  * lombok代码生成规则
  * 
- * @author 王敏聪
+ * @author Wang Mincong
  * @date 2020-01-15 14:32
  */
 public class GeneraterRegulation {

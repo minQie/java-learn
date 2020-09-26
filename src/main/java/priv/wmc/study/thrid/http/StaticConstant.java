@@ -3,7 +3,7 @@ package priv.wmc.study.thrid.http;
 /**
  * 连接相关的常量
  *
- * @author 王敏聪
+ * @author Wang Mincong
  * @date 2020-02-04 20:20
  */
 public final class StaticConstant {

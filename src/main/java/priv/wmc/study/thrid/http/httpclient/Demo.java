@@ -10,7 +10,7 @@ import org.apache.http.client.fluent.Request;
 import org.junit.Test;
 
 /**
- * @author 王敏聪
+ * @author Wang Mincong
  * @date 2020-02-04 20:35
  */
 @Slf4j

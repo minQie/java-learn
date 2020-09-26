@@ -11,7 +11,7 @@ import lombok.RequiredArgsConstructor;
  * 2、如果字段有被“@NonNull”修饰，那么构造方法会为其进行非null检测，如果为null，报错空指针异常
  * ps: @NonNull 只能修饰包装数据类型，否则不起作用
  *
- * @author 王敏聪
+ * @author Wang Mincong
  * @date 2019-08-19 15:00
  */
 @Getter

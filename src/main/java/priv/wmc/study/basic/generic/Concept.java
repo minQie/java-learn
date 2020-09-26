@@ -30,7 +30,7 @@ package priv.wmc.study.basic.generic;
  * 子类 - 不保留：  A<T1, T2> extends B<T1, T2>
  * 子类 - 不保留：  A<T1, T2> extends B（不指定类型，擦除，详见当前类的内部类（用接口也一样）A和B）
  *
- * @author 王敏聪
+ * @author Wang Mincong
  * @date 2019-08-09 13:41
  */
 public final class Concept {

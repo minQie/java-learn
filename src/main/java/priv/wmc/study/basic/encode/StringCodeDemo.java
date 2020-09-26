@@ -6,7 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
 /**
- * @author 王敏聪
+ * @author Wang Mincong
  * @date 2020-04-27 11:23
  */
 @Slf4j

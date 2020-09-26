@@ -11,7 +11,7 @@ import org.junit.Test;
 /** 
  * 通过为LocalDateTime 指定偏移量ZoneOffset 产生OffsetDateTime
  * 
- * @author 王敏聪
+ * @author Wang Mincong
  * @date 2020-03-03 17:49
  */
 @Slf4j

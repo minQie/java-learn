@@ -3,7 +3,7 @@ package priv.wmc.study.other.regex;
 import org.junit.Test;
 
 /**
- * @author 王敏聪
+ * @author Wang Mincong
  * @date 2019-11-28 09:53
  */
 public class RegexTest {

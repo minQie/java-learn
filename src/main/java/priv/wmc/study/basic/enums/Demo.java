@@ -16,13 +16,13 @@ public class Demo {
 //        demo4();
 //        log.info(Animal.getById("2") == Animal.CAT);
 
-        log.info(Animal.CAT.name());
+        log.info(AnimalEnum.CAT.name());
     }
 
     public static void demo1() {
         String id = "1";
 
-        Animal animal = Animal.getById(id);
+        AnimalEnum animal = AnimalEnum.getById(id);
 
         switch (animal) {
             case CAT:
@@ -41,23 +41,23 @@ public class Demo {
      * 枚举的toString方法
      */
     public static void demo2() {
-        log.info(Animal.CAT.toString());// CAT
-        log.info(Animal.CAT.toString());// CAT
+        log.info(AnimalEnum.CAT.toString());// CAT
+        log.info(AnimalEnum.CAT.toString());// CAT
     }
 
     /**
      * 枚举的compareTo方法
      */
     public static void demo3() {
-        log.info(String.valueOf(Animal.CAT.compareTo(Animal.CAT)));
-        log.info(String.valueOf(Animal.CAT.compareTo(Animal.DOG)));
+        log.info(String.valueOf(AnimalEnum.CAT.compareTo(AnimalEnum.CAT)));
+        log.info(String.valueOf(AnimalEnum.CAT.compareTo(AnimalEnum.DOG)));
     }
 
     /**
      * 枚举的ordinal方法
      */
     public static void demo4() {
-        log.info(String.valueOf(Animal.CAT.ordinal())); // 0
-        log.info(String.valueOf(Animal.DOG.ordinal())); // 1
+        log.info(String.valueOf(AnimalEnum.CAT.ordinal())); // 0
+        log.info(String.valueOf(AnimalEnum.DOG.ordinal())); // 1
     }
 }

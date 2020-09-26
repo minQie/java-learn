@@ -5,7 +5,7 @@ import lombok.EqualsAndHashCode;
 
 /** 
  * Simple POJO AS Child
- * @author 王敏聪
+ * @author Wang Mincong
  * @date 2019-08-09 12:42
  */
 @Data

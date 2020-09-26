@@ -13,7 +13,7 @@ import org.junit.Test;
  * 1、非捕获组不是只用于取反，取反理所当然是非捕获组，不能本末倒置<br>
  * 2、非捕获组与熟知的捕获组的差别仅在于，不会被捕获结果<br>
  *<br>
- * @author 王敏聪
+ * @author Wang Mincong
  * @date 2019-11-07 16:14
  */
 public class CatchTest {

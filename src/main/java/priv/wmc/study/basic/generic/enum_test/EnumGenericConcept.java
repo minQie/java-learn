@@ -1,7 +1,6 @@
 package priv.wmc.study.basic.generic.enum_test;
 
 import lombok.extern.slf4j.Slf4j;
-import priv.wmc.study.priority.proxy.jdk.CustomJdkTargetProxy;
 
 /**
  * 如何表达一种泛型：实现了特定的接口的枚举类型

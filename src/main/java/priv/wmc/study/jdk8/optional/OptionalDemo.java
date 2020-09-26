@@ -28,7 +28,7 @@ import lombok.extern.slf4j.Slf4j;
  * == <X extends Throwable> T orElseThrow(Supplier<? extends X> exceptionSupplier)
  * 如果存在该值，返回值，否则抛出由 Supplier 继承的异常
  *
- * @author 王敏聪
+ * @author Wang Mincong
  * @date 2019-08-24 16:53
  */
 @Slf4j

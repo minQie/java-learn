@@ -57,7 +57,7 @@ import java.util.function.Consumer;
  *
  * 	函数式接口：只有一个接口方法（默认方法除外、Object下的方法除外）
  *
- * @author 王敏聪
+ * @author Wang Mincong
  * @date 2019-08-09 11:05
  */
 public class FunctionInterfaceDemo {

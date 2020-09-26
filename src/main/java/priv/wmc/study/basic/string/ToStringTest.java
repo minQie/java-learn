@@ -6,7 +6,7 @@ import org.junit.Test;
 /**
  * Object to String
  *
- * @author 王敏聪
+ * @author Wang Mincong
  * @date 2019-11-08 14:42
  */
 @Slf4j
