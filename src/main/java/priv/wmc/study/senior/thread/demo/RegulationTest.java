@@ -12,17 +12,17 @@ import lombok.extern.slf4j.Slf4j;
  *
  * 思考的提示点：
  * 1、往复循环 -> 代码有死循环
- * 2、控制同一时间职能有一个人进入房间的操作当然只能由同步的相关代码（上面说的门）来保证，并且同步也只能做这个，起到这样的效果
+ * 2、控制同一时间只能有一个人进入房间的操作当然只能由同步的相关代码（上面说的门）来保证，并且同步也只能做这个，起到这样的效果
  * 3、synchronized的嵌套如何类比理解：不能理解为大房间里有小房间，因为这样会有你人在小房间，同时你人也在大房间的错误理解，实际在同步嵌套中：
  * 例如，A同步嵌套B同步，你在B的同步代码快中调用A.wait()，会抛出异常的，所以要向上面的理解那样，像上面那样，你说你不出房间B，却要睡在房间A，当然是不很合理的
  *
- * 疑问点：你会发现，把RegulationTwo在finally中释放锁的操作注释掉，RegualationTwo的运行效果也是正常的
+ * 疑问点：你会发现，把RegulationTwo在finally中释放锁的操作注释掉，RegulationTwo的运行效果也是正常的
  *
  * @author Wang Mincong
  * @date 2020-03-14 13:58
  */
 @Slf4j
-public class Demo {
+public class RegulationTest {
 
     public static Integer RESOURCE = new Integer(0);
 

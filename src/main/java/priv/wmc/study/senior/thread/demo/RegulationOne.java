@@ -39,14 +39,14 @@ public class RegulationOne implements ProduceAndConsumeRegulationInterface {
      */
     public static void producing() {
         while(true) {
-            synchronized (Demo.PRODUCER_GROUP) {
+            synchronized (RegulationTest.PRODUCER_GROUP) {
                 log.info(ThreadUtils.getCurrentThreadInfo() + "进入生产室，准备生产");
 
                 // 消费队还没有生产好，别干忙活，先睡着，反正消费队消费好会来叫醒自己
                 if (isProduceOk) {
                     try {
                         log.info(ThreadUtils.getCurrentThreadInfo() + "消费队还没有消费完，无法生产，开始睡觉...");
-                        Demo.PRODUCER_GROUP.wait();
+                        RegulationTest.PRODUCER_GROUP.wait();
                         log.info(ThreadUtils.getCurrentThreadInfo() + "被叫醒");
                     } catch (InterruptedException | IllegalMonitorStateException e) {
                         e.printStackTrace();
@@ -56,22 +56,22 @@ public class RegulationOne implements ProduceAndConsumeRegulationInterface {
                 // 生产
                 log.info(ThreadUtils.getCurrentThreadInfo() + "开始生产...");
                 try {Thread.sleep(1000);} catch (InterruptedException e1) {e1.printStackTrace();}
-                log.info(ThreadUtils.getCurrentThreadInfo() + "生产了: " + ++Demo.RESOURCE);
+                log.info(ThreadUtils.getCurrentThreadInfo() + "生产了: " + ++RegulationTest.RESOURCE);
 
                 // 是否生产完
-                if (Demo.RESOURCE.equals(Demo.PRODUCER_AND_CONSUMER_SUM)) {
+                if (RegulationTest.RESOURCE.equals(RegulationTest.PRODUCER_AND_CONSUMER_SUM)) {
                     isProduceOk = true;
                     // 生产队要确保把消费队叫醒，所以必须要进到消费室（所以此时要求，消费队一定都是睡着的，或者没有人在里面，这里保证前者）
-                    synchronized(Demo.CONSUMER_GROUP) {
+                    synchronized(RegulationTest.CONSUMER_GROUP) {
                         log.info(ThreadUtils.getCurrentThreadInfo() + "生产的是最后一件，生产队生产完毕，去消费室把消费队叫醒...");
-                        Demo.CONSUMER_GROUP.notifyAll();
+                        RegulationTest.CONSUMER_GROUP.notifyAll();
                     }
                 }
 
                 // 休息
                 try {
                     log.info(ThreadUtils.getCurrentThreadInfo() + "生产完毕，开始睡觉...");
-                    Demo.PRODUCER_GROUP.wait();
+                    RegulationTest.PRODUCER_GROUP.wait();
                     log.info(ThreadUtils.getCurrentThreadInfo() + "被叫醒");
                 } catch (InterruptedException | IllegalMonitorStateException e) {
                     e.printStackTrace();
@@ -86,14 +86,14 @@ public class RegulationOne implements ProduceAndConsumeRegulationInterface {
      */
     public static void consuming() {
         while(true) {
-            synchronized (Demo.CONSUMER_GROUP) {
+            synchronized (RegulationTest.CONSUMER_GROUP) {
                 log.info(ThreadUtils.getCurrentThreadInfo() + "进入消费室，准备消费");
 
                 // 生产队还没有生产好，别干忙活，先睡着，反正生产队生产好会来叫醒自己
                 if (!isProduceOk) {
                     try {
                         log.info(ThreadUtils.getCurrentThreadInfo() + "生产队还没有生产完，无法消费，开始睡觉...");
-                        Demo.CONSUMER_GROUP.wait();
+                        RegulationTest.CONSUMER_GROUP.wait();
                         log.info(ThreadUtils.getCurrentThreadInfo() + "被叫醒");
                     } catch (InterruptedException | IllegalMonitorStateException e) {
                         e.printStackTrace();
@@ -103,22 +103,22 @@ public class RegulationOne implements ProduceAndConsumeRegulationInterface {
                 // 消费
                 log.info(ThreadUtils.getCurrentThreadInfo() + "开始消费...");
                 try {Thread.sleep(1000);} catch (InterruptedException e1) {e1.printStackTrace();}
-                log.info(ThreadUtils.getCurrentThreadInfo() + "消费了: " + Demo.RESOURCE--);
+                log.info(ThreadUtils.getCurrentThreadInfo() + "消费了: " + RegulationTest.RESOURCE--);
 
                 // 是否消费完
-                if (Demo.RESOURCE.equals(0)) {
+                if (RegulationTest.RESOURCE.equals(0)) {
                     isProduceOk = false;
                     // 同理，去生产室叫醒生产队
-                    synchronized(Demo.PRODUCER_GROUP) {
+                    synchronized(RegulationTest.PRODUCER_GROUP) {
                         log.info(ThreadUtils.getCurrentThreadInfo() + "消费的是最后一件，消费队消费完毕，去生产室叫醒生产队...");
-                        Demo.PRODUCER_GROUP.notifyAll();
+                        RegulationTest.PRODUCER_GROUP.notifyAll();
                     }
                 }
 
                 // 休息
                 try {
                     log.info(ThreadUtils.getCurrentThreadInfo() + "消费完毕，开始睡觉...");
-                    Demo.CONSUMER_GROUP.wait();
+                    RegulationTest.CONSUMER_GROUP.wait();
                     log.info(ThreadUtils.getCurrentThreadInfo() + "被叫醒");
                 } catch (InterruptedException | IllegalMonitorStateException e) {
                     e.printStackTrace();

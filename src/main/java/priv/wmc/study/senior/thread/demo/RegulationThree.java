@@ -41,10 +41,10 @@ public class RegulationThree implements ProduceAndConsumeRegulationInterface {
                 // 生产
                 log.info(ThreadUtils.getCurrentThreadInfo() + "进入房间，开始生产...");
                 try {Thread.sleep(1000);} catch (InterruptedException e1) {e1.printStackTrace();}
-                log.info(ThreadUtils.getCurrentThreadInfo() + "生产了: " + ++Demo.RESOURCE);
+                log.info(ThreadUtils.getCurrentThreadInfo() + "生产了: " + ++RegulationTest.RESOURCE);
 
                 // 生产队生产完毕 -> 叫醒消费队
-                if (Demo.RESOURCE.equals(Demo.PRODUCER_AND_CONSUMER_SUM)) {
+                if (RegulationTest.RESOURCE.equals(RegulationTest.PRODUCER_AND_CONSUMER_SUM)) {
                     log.info(ThreadUtils.getCurrentThreadInfo() + "生产的是最后一件，生产队生产完毕，去消费室把消费队叫醒...");
                     CONSUMER_CONDITION.signalAll();
                 }
@@ -82,17 +82,17 @@ public class RegulationThree implements ProduceAndConsumeRegulationInterface {
                 // 消费
                 log.info(ThreadUtils.getCurrentThreadInfo() + "进入房间，开始消费...");
                 try {Thread.sleep(1000);} catch (InterruptedException e1) {e1.printStackTrace();}
-                log.info(ThreadUtils.getCurrentThreadInfo() + "消费了: " + Demo.RESOURCE--);
+                log.info(ThreadUtils.getCurrentThreadInfo() + "消费了: " + RegulationTest.RESOURCE--);
 
                 // 是否消费完毕 -> 开始生产
-                if (Demo.RESOURCE.equals(0)) {
+                if (RegulationTest.RESOURCE.equals(0)) {
                     log.info(ThreadUtils.getCurrentThreadInfo() + "消费的是最后一件，消费队消费完毕，去生产室叫醒生产队...");
                     PRODUCER_CONDITION.signalAll();
                 }
 
                 // 休息
                 log.info(ThreadUtils.getCurrentThreadInfo() + "开始休息...");
-                PRODUCER_CONDITION.await();
+                CONSUMER_CONDITION.await();
             } catch (InterruptedException e) {
                 LOCK.unlock();
                 log.info(ThreadUtils.getCurrentThreadInfo() + "被叫醒，离开房间");
