@@ -16,7 +16,7 @@ public class StringCodeDemo {
     public void demo() {
         log.info(StandardCharsets.UTF_8.name());
 
-        String productName = "尚汤饮料-经常美（玫瑰味）";
+        String productName = "可乐";
         String iso = new String(productName.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
         String utf = new String(productName.getBytes(StandardCharsets.UTF_8), StandardCharsets.UTF_8);
 
