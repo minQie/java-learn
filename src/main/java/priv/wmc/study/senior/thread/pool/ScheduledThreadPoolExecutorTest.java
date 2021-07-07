@@ -46,7 +46,7 @@ public class ScheduledThreadPoolExecutorTest {
         scheduledFuture1.isCancelled();
 
         // --- 此时线程池中进程活跃数: 1, 线程池中线程数量: 1
-        // 问题一、为什么线程数是 1，难道不是一个定时任务对应
+        // 问题一、为什么线程数是 1，难道不是一个线程对应一个定时任务？
 
         // 没有返回值的任务调用，只会拿到 null
         Object result1 = scheduledFuture1.get();
@@ -66,7 +66,7 @@ public class ScheduledThreadPoolExecutorTest {
         log.info("线程池中线程数量: {}", executor.getPoolSize());
 
         // 注册一个循环定时任务（每过一定的秒数就执行指定的任务），方法不支持 Callable 的参数
-//        executor.scheduleAtFixedRate(runnable, 1, 1, TimeUnit.SECONDS);
+        // executor.scheduleAtFixedRate(runnable, 1, 1, TimeUnit.SECONDS);
 
         executor.remove(runnable);
         executor.getQueue().remove(runnable);

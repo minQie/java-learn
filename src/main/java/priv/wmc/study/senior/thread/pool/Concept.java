@@ -30,8 +30,9 @@ public final class Concept {
     private Concept() {
         // j.u.c 包下提供的 Executors 类，提供了以下 5 种线程池的静态创建方法
         ExecutorService executorService = Executors.newFixedThreadPool(4);
-        ExecutorService executorService1 = Executors.newCachedThreadPool();
-        ExecutorService executorService2 = Executors.newSingleThreadExecutor();
+        ExecutorService executorService1 = Executors.newSingleThreadExecutor();
+
+        ExecutorService executorService2 = Executors.newCachedThreadPool();
 
         ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(4);
         ScheduledExecutorService scheduledExecutorService1 = Executors.newSingleThreadScheduledExecutor();
@@ -41,8 +42,8 @@ public final class Concept {
 
         // 二、不允许使用 Executors 去创建线程池，而是通过 ThreadPoolExecutor
         // 通过 Executor 创建的 线程池
-        // FixedThreadPool、SingleThreadPool：允许的请求队列长度为Integer.MAX_VALUE，可能会堆积大量的请求，从而导致OOM
-        // CachedThreadPool等线程池：允许的创建线程数量为Integer.MAX_VALUE，可能会创建大量的线程，从而导致OOM
+        // FixedThreadPool、SingleThreadPool：允许的请求队列长度为Integer.MAX_VALUE，可能会堆积大量的请求，从而导致 OOM
+        // CachedThreadPool等线程池：允许的创建线程数量为Integer.MAX_VALUE，可能会创建大量的线程，从而导致 OOM
 
         // 目的是为了让写的同学更加明确线程池的运行规则，规避资源耗尽的风险
         // 用自己的话说就是，希望开发人员能够对线程这么一个重量级的资源重视起来，自己对各种配置的参数做到心里有数，其实同 HashMap 规范要求一样的意思

@@ -1,4 +1,4 @@
-package priv.wmc.study.interview;
+package priv.wmc.study.basic;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
@@ -17,40 +17,27 @@ import org.junit.Test;
 @Slf4j
 public class VariableValueTest {
 
+    /** 举例
+     * int a = 1;
+     * int b = a++;
+     *
+     * 0、局部变量表的a的值为1
+     * 1、将a的值进栈（1）
+     * 2、局部变量表的a自增（2）
+     * 3、将栈中的值赋值给赋值给b（1）
+     *
+     * 如果是 int b = ++a;
+     *
+     * 0、局部变量表的a的值为1
+     * 1、将a的值进栈（1）
+     * 2、局部变量表的a自增（2）后进栈
+     * 3、将栈中的值赋值给赋值给b（2）
+     */
     @Test
     public void test() {
-        int a = 1;
-        int b = a++;
-        // a(2) b(1)
-
         int i = 1;
-        // i(1)
-
-
-        i = i++;
-        /* i的值为2 - 错误
-         * 可以得到idea给出的警告提示：The value changed at 'i++' is never used
-         *
-         * 详解：你的脑袋里一定得有java的内存模型
-         * int a = 1;
-         * int b = a++;
-         *
-         * 0、局部变量表的a的值为1
-         * 1、将a的值进栈（1）
-         * 2、局部变量表的a自增（2）
-         * 3、将栈中的值赋值给赋值给b（1）
-         *
-         * 如果是 int b = ++a;
-         *
-         * 0、局部变量表的a的值为1
-         * 1、将a的值进栈（1）
-         * 2、局部变量表的a自增（2）后进栈
-         * 3、将栈中的值赋值给赋值给b（2）
-         */
-
         int j = i++;
         // i(2) j(1)
-
 
         int k = i + ++i * i++;
 

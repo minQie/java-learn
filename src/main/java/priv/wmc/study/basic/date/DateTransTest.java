@@ -19,7 +19,7 @@ public class DateTransTest {
         SimpleDateFormat sdf = new SimpleDateFormat(format, Locale.ENGLISH);
 
         String dateString = "2018-01-01 00:00:00 AM";
-//        String dateString2 = "2018-01-01 00:00:00 PM";
+        // String dateString2 = "2018-01-01 00:00:00 PM";
 
         // String -> Date
         Date date = sdf.parse(dateString);
